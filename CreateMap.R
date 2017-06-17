@@ -1,7 +1,7 @@
 library(maptools)
 library(RColorBrewer)
 library(classInt)
-setwd("C:/Users/Dion/Documents/NZ electorate boundaries/")
+setwd("C:/Users/Dion/Documents/MappingData/")
 
 
 ## General Roll -------------------------------------------------
@@ -41,11 +41,11 @@ GcolourValues <- orderedVotes
 Gboundaries$cValue = GcolourValues
 
 #select color palette and the number colors to represent on the map
-colors <- brewer.pal(9, "YlOrRd") #set breaks for the 9 colors 
-brks<-classIntervals(Gboundaries$cValue, n=9, style="quantile")
+colors <- brewer.pal(5, "Blues") #set breaks for the 9 colors 
+brks<-classIntervals(Gboundaries$cValue, n=5, style="quantile")
 brks<- brks$brks #plot the map
 
-brks <- c(10,20,30,40,50,60,70,80,90,100)
+brks <- c(10,20,30,40,50,60)
 plot(Gboundaries, col=colors[findInterval(Gboundaries$cValue, brks,all.inside=TRUE)], axes=F)
 
 

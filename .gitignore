@@ -1,2 +1,10 @@
 *.csv
+*.DAT
+*.ID
+*.IND
+*.MAP
+*.TAB
+*.dbf
+*.prj
 *.shp
+*.shx
